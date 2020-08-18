@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const PORT = 3000;
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
 var knex = require("knex");
@@ -44,8 +43,8 @@ app.post("/imageurl", (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(PORT, () => {
-  console.log(`Currently listening on port: ${PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Currently listening on port: ${process.env.PORT}`);
 });
 
 /* 
